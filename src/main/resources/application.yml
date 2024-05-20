@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: back-dev-camp
+  datasource:
+    username : admin_jw
+    password : admin_jw
+    driver-class-name: org.postgresql.Driver
