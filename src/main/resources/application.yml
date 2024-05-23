@@ -5,3 +5,12 @@ spring:
     username : admin_jw
     password : admin_jw
     driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/devcampspring
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        use_sql_comments: true
+    hibernate:
+      ddl-auto: update
