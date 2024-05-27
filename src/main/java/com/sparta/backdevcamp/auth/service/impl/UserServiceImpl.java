@@ -2,6 +2,7 @@ package com.sparta.backdevcamp.auth.service.impl;
 
 import com.sparta.backdevcamp.auth.dto.SignupDto;
 import com.sparta.backdevcamp.auth.entity.User;
+import com.sparta.backdevcamp.auth.jwt.JwtProvider;
 import com.sparta.backdevcamp.auth.repository.UserRepository;
 import com.sparta.backdevcamp.auth.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -16,7 +17,7 @@ import java.util.Optional;
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
-
+    private final JwtProvider jwtProvider;
     public SignupDto.ResponseDto signup(SignupDto.RequestDto requestDto){
         Optional<User> existUser = userRepository.findByEmail(requestDto.getEmail());
         if(existUser.isPresent()){

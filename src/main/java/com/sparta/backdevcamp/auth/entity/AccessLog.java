@@ -15,8 +15,10 @@ public class AccessLog extends BaseEntity {
     @Column(length = 512)
     private String ua;
 
+    @Column
     private String ip;
 
+    @Column
     private String endpoint;
 
     @ManyToOne(cascade = CascadeType.REMOVE)
