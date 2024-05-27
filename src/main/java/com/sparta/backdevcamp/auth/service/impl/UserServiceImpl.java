@@ -6,6 +6,7 @@ import com.sparta.backdevcamp.auth.repository.UserRepository.UserRepository;
 import com.sparta.backdevcamp.auth.service.UserService;
 import lombok.RequiredArgsConstructor;
 //import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -14,7 +15,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
-//    private final PasswordEncoder passwordEncoder;
+    private final PasswordEncoder passwordEncoder;
 
     public SignupDto.ResponseDto signup(SignupDto.RequestDto requestDto){
         Optional<User> existUser = userRepository.findByEmail(requestDto.getEmail());
@@ -23,7 +24,7 @@ public class UserServiceImpl implements UserService {
         }
         User user = new User(
                 requestDto.getEmail(),
-               requestDto.getPassword(),
+                passwordEncoder.encode(requestDto.getPassword()),
                 requestDto.getUsername(),
                 requestDto.getRole()
         );

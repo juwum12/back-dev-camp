@@ -14,3 +14,6 @@ spring:
         use_sql_comments: true
     hibernate:
       ddl-auto: update
+  jwt:
+    secret:
+      key: 8WR4Qd9KVh7BodN8OkYd5QHSM+OD1kZFqzltvr8IkqdL4E8f9Y1Zzmh+AcgzW9jZEnsfaRHcj4tLXqaIcyj63A==
