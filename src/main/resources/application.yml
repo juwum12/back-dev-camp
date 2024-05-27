@@ -14,3 +14,16 @@ spring:
         use_sql_comments: true
     hibernate:
       ddl-auto: update
+    database: postgresql
+  jwt:
+    secret:
+      key: 8WR4Qd9KVh7BodN8OkYd5QHSM+OD1kZFqzltvr8IkqdL4E8f9Y1Zzmh+AcgzW9jZEnsfaRHcj4tLXqaIcyj63A==
+
+logging:
+  file:
+    name: logs/devcamp.log
+  logback:
+    rolling policy:
+      max-file-size: 50MB
+      max-history: 7
+      file-name-pattern: ${LOG_FILE}.%d{yyyy-MM-dd}-%i.log

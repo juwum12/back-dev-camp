@@ -1,4 +1,4 @@
-package com.sparta.backdevcamp.auth.repository.UserRepository;
+package com.sparta.backdevcamp.auth.repository;
 
 
 import com.sparta.backdevcamp.auth.entity.User;
